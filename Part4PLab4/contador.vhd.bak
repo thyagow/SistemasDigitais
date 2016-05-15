@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity FSM_clock is
+	port(
+	clock : in std_logic;
+	c : out std_logic;
+	);
+end FSM_clock;	
+	signal clk_counter : std_logic_vector(32 downto 0);
+	
+	architecture contador of FSM_clock is
+		begin
+			
+			process(clock, clk_counter)
+				begin
+					
+					if(clock'event and clock = '1') then
+						if(clk_counter = x"2FAF07F") then
+							clk_counter <= (others => '0');
+						else
+							clk_counter <= clk_counter + 1;
+						end if;
+					end if;
+				end process;
+	end contador;
+						
+					

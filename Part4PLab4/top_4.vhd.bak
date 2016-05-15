@@ -1,0 +1,22 @@
+library ieee;
+
+entity top_4 is
+	port(
+		clock_50 : in std_logic;
+		HEX0 : out std_logic_vector(6 downto 0)
+	);
+	
+architecture topo of top_4 is
+
+component contador	
+	port(
+		clk : in std_logic;
+		c : out std_logic
+	);
+component contador2
+	port(
+		clock : in std_logic;
+		hex_show : out std_logic_vector(6 downto 0)
+	);
+	begin
+	
